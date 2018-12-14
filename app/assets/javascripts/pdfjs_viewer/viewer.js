@@ -6453,9 +6453,6 @@ var pdfjsWebLibs;
    validateFileURL = function validateFileURL(file) {
     try {
      var viewerOrigin = new URL(window.location.href).origin || 'null';
-     if (HOSTED_VIEWER_ORIGINS.indexOf(viewerOrigin) >= 0) {
-      return;
-     }
      var fileOrigin = new URL(file, window.location.href).origin;
      if (fileOrigin !== viewerOrigin) {
       throw new Error('file origin does not match viewer\'s');
